@@ -1,0 +1,12 @@
+node_modules
+dist
+.superpowers
+
+# IDE
+.idea
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
