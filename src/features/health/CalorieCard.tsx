@@ -1,7 +1,8 @@
 import { useState, useMemo } from 'react'
 import { Calculator, Flame } from 'lucide-react'
 import { calculateBMR, calculateTDEE, ACTIVITY_LABELS } from '../../lib/calorie'
-import type { Gender, ActivityLevel, CalorieParams } from './useHealthData'
+import type { Gender, ActivityLevel } from '../../lib/calorie'
+import type { CalorieParams } from './useHealthData'
 
 interface CalorieCardProps {
   defaultWeight: number | null
