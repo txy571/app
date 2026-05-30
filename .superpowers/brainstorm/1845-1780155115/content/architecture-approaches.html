@@ -1,0 +1,68 @@
+<h2>架构选型：三个决策</h2>
+<p class="subtitle">为未来扩展打好基础</p>
+
+<div class="section">
+  <h3>📌 决策一：路由方案</h3>
+  <div class="options">
+    <div class="option" data-choice="react-router" onclick="toggleSelect(this)">
+      <div class="letter">A</div>
+      <div class="content">
+        <h3>React Router v7</h3>
+        <p>正式路由方案，URL 即状态<br>支持懒加载、深层链接</p>
+        <div class="pros-cons" style="margin-top: 8px;">
+          <div class="pros" style="padding: 4px 8px;">未来加页面不改架构</div>
+          <div class="cons" style="padding: 4px 8px;">4个Tab稍重</div>
+        </div>
+      </div>
+    </div>
+    <div class="option" data-choice="state-tabs" onclick="toggleSelect(this)">
+      <div class="letter">B</div>
+      <div class="content">
+        <h3>状态驱动 Tab（推荐）</h3>
+        <p>useState 控制当前 Tab<br>纯客户端，零依赖</p>
+        <div class="pros-cons" style="margin-top: 8px;">
+          <div class="pros" style="padding: 4px 8px;">极简、够用</div>
+          <div class="cons" style="padding: 4px 8px;">URL不可分享</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>📌 决策二：状态管理</h3>
+  <div class="options">
+    <div class="option" data-choice="zustand" onclick="toggleSelect(this)">
+      <div class="letter">A</div>
+      <div class="content">
+        <h3>Zustand</h3>
+        <p>轻量状态库，按 module 拆分 store<br>自带 subscribe + selector 优化</p>
+        <div class="pros-cons" style="margin-top: 8px;">
+          <div class="pros" style="padding: 4px 8px;">优雅的解耦</div>
+          <div class="cons" style="padding: 4px 8px;">多一个依赖</div>
+        </div>
+      </div>
+    </div>
+    <div class="option" data-choice="custom-hooks" onclick="toggleSelect(this)">
+      <div class="letter">B</div>
+      <div class="content">
+        <h3>Custom Hooks（推荐）</h3>
+        <p>useTodos / useHealthData / useSettings<br>useLocalStorage 封装底层</p>
+        <div class="pros-cons" style="margin-top: 8px;">
+          <div class="pros" style="padding: 4px 8px;">零依赖、直观</div>
+          <div class="cons" style="padding: 4px 8px;">跨模块通信需提升</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>📌 决策三：推荐组合</h3>
+  <div style="background: #eef2ff; border-radius: 12px; padding: 16px;">
+    <p style="font-weight: 600; color: #4338ca;">状态 Tab + Custom Hooks + localStorage</p>
+    <p style="margin-top: 8px;">
+      理由：4 个 Tab 用路由大材小用；Zustand 很好但你的数据全部 sync 到 localStorage，Custom Hooks 封装同样干净且少一个依赖。
+    </p>
+  </div>
+</div>

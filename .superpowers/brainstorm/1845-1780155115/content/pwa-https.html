@@ -1,0 +1,46 @@
+<h2>PWA 与 HTTPS 的关系</h2>
+<p class="subtitle">分清楚"要不要证书"</p>
+
+<div class="section">
+  <h3>各功能对 HTTPS 的要求</h3>
+  <div style="display: flex; flex-direction: column; gap: 8px;">
+
+    <div style="display: flex; align-items: center; gap: 12px; background: #fef2f2; border-radius: 12px; padding: 12px;">
+      <div style="font-size: 24px;">🔴</div>
+      <div>
+        <div style="font-weight: 600;">Service Worker</div>
+        <div style="font-size: 14px; color: #666;"><strong>必须 HTTPS</strong>（localhost 开发时除外）</div>
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 12px; background: #fff7ed; border-radius: 12px; padding: 12px;">
+      <div style="font-size: 24px;">🟡</div>
+      <div>
+        <div style="font-weight: 600;">安装到桌面（manifest.json）</div>
+        <div style="font-size: 14px; color: #666;">建议 HTTPS，但 manifest 本身走 HTTP 也能加载<br>
+        <span style="font-size: 13px;">不过浏览器安装提示需要 HTTPS + Service Worker 同时满足</span></div>
+      </div>
+    </div>
+
+    <div style="display: flex; align-items: center; gap: 12px; background: #f0fdf4; border-radius: 12px; padding: 12px;">
+      <div style="font-size: 24px;">🟢</div>
+      <div>
+        <div style="font-weight: 600;">你的全部功能（React + Tailwind + localStorage + API 调用）</div>
+        <div style="font-size: 14px; color: #666;"><strong>不需要证书</strong>，HTTP 完全够用</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section">
+  <h3>结论</h3>
+  <div style="background: #eef2ff; border-radius: 12px; padding: 16px;">
+    <p style="font-weight: 600; color: #4338ca;">既然我们跳过 Service Worker，证书不是必需的。</p>
+    <p style="margin-top: 8px;">
+      ✅ 纯 HTTP 就能开发部署<br>
+      ✅ manifest.json 纯装饰作用（桌面图标 + 启动画面）<br>
+      ✅ 所有功能正常使用
+    </p>
+  </div>
+</div>

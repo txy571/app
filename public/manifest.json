@@ -1,0 +1,17 @@
+{
+  "name": "AI 私人生活教练",
+  "short_name": "AI教练",
+  "description": "每日计划、健康追踪、AI 复盘 — 你的私人生活教练",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f9fafb",
+  "theme_color": "#4F46E5",
+  "icons": [
+    {
+      "src": "/vite.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

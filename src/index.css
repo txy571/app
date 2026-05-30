@@ -1,0 +1,30 @@
+@import "tailwindcss";
+
+/* Hide scrollbar but keep scroll functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Breathing animation for AI coach button */
+@keyframes breathe {
+  0%, 100% {
+    box-shadow: 0 8px 24px rgba(79, 70, 229, 0.3);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 8px 40px rgba(79, 70, 229, 0.5);
+    transform: scale(1.02);
+  }
+}
+.animate-breathe {
+  animation: breathe 2.5s ease-in-out infinite;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}

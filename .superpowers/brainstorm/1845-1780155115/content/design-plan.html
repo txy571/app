@@ -1,0 +1,73 @@
+<h2>📝 每日计划 — PlanView</h2>
+<p class="subtitle">纯粹的待办事项管理</p>
+
+<div class="section">
+  <div class="mockup">
+    <div class="mockup-body" style="padding: 0;">
+      <div style="max-width: 360px; margin: 0 auto;">
+
+        <!-- 日期条 -->
+        <div style="padding: 8px 20px;">
+          <div style="font-size: 13px; color: #6b7280; font-weight: 500;">5月30日 周六 · 今日任务</div>
+        </div>
+
+        <!-- 输入框 -->
+        <div style="padding: 0 20px 16px;">
+          <div style="display: flex; gap: 8px;">
+            <div style="flex: 1; border: 1px solid #e5e7eb; border-radius: 12px; padding: 10px 14px; font-size: 14px; color: #9ca3af;">添加新任务...</div>
+            <div style="background: #111827; color: white; border-radius: 12px; padding: 10px 16px; font-size: 13px; font-weight: 500;">添加</div>
+          </div>
+        </div>
+
+        <!-- 任务列表 -->
+        <div style="padding: 0 20px; display: flex; flex-direction: column; gap: 8px;">
+          <!-- 未完成 -->
+          <div style="display: flex; align-items: center; justify-content: space-between; background: white; border-radius: 12px; padding: 14px 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06);">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div style="width: 20px; height: 20px; border-radius: 6px; border: 2px solid #d1d5db;"></div>
+              <span style="font-size: 14px; font-weight: 500; color: #374151;">完成C语言二叉树遍历实验</span>
+            </div>
+            <div style="color: #d1d5db; font-size: 16px;">🗑️</div>
+          </div>
+          <!-- 已完成 -->
+          <div style="display: flex; align-items: center; justify-content: space-between; background: #f9fafb; border-radius: 12px; padding: 14px 16px;">
+            <div style="display: flex; align-items: center; gap: 12px;">
+              <div style="width: 20px; height: 20px; border-radius: 6px; background: #4f46e5; display: flex; align-items: center; justify-content: center; color: white; font-size: 12px;">✓</div>
+              <span style="font-size: 14px; color: #9ca3af; text-decoration: line-through;">跑步 3 公里</span>
+            </div>
+            <div style="color: #d1d5db; font-size: 16px;">🗑️</div>
+          </div>
+        </div>
+
+        <!-- 空状态 -->
+        <div style="padding: 20px; text-align: center; color: #9ca3af; font-size: 13px; display: none;">
+          今天还没有安排任务哦
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>交互细节</h3>
+  <ul>
+    <li>点击复选框 → 中划线 + 文字淡化 + <code>transition-all duration-200</code></li>
+    <li>删除按钮 hover 变红色</li>
+    <li>空列表显示 "今天还没有安排任务哦"</li>
+    <li>初始测试数据：['完成C语言二叉树遍历实验', '跑步 3 公里']</li>
+  </ul>
+</div>
+
+<div class="section">
+  <h3>数据接口</h3>
+  <div style="background: #f3f4f6; border-radius: 8px; padding: 12px; font-family: monospace; font-size: 13px;">
+    // useTodos() 返回<br>
+    {<br>
+    &nbsp;&nbsp;todos: Todo[],<br>
+    &nbsp;&nbsp;addTodo: (text) => void,<br>
+    &nbsp;&nbsp;toggleTodo: (id) => void,<br>
+    &nbsp;&nbsp;removeTodo: (id) => void<br>
+    }
+  </div>
+</div>

@@ -1,0 +1,74 @@
+<h2>📐 App Shell 布局</h2>
+<p class="subtitle">整体骨架</p>
+
+<div class="section">
+  <div class="mockup">
+    <div class="mockup-header">整体结构</div>
+    <div class="mockup-body" style="padding: 0;">
+      <!-- Phone frame -->
+      <div style="max-width: 360px; margin: 0 auto; border: 1px solid #e5e7eb; border-radius: 24px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+
+        <!-- Header -->
+        <div style="padding: 16px 20px; border-bottom: 1px solid #f3f4f6; display: flex; justify-content: space-between; align-items: center; background: white;">
+          <div>
+            <div style="font-size: 18px; font-weight: 700;">今日概览</div>
+            <div style="font-size: 12px; color: #9ca3af;">2026年5月30日 周六</div>
+          </div>
+          <div style="width: 32px; height: 32px; background: #f3f4f6; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #9ca3af;">⚙️</div>
+        </div>
+
+        <!-- Content Area -->
+        <div style="height: 480px; background: #f9fafb; padding: 20px; display: flex; flex-direction: column; gap: 16px;">
+          <div style="background: #eef2ff; border-radius: 12px; padding: 20px; text-align: center; color: #4338ca; font-size: 14px; border: 2px dashed #c7d2fe;">
+            Tab 内容区
+          </div>
+        </div>
+
+        <!-- Bottom Nav -->
+        <div style="display: flex; border-top: 1px solid #f3f4f6; background: white; padding: 8px 0;">
+          <div style="flex: 1; text-align: center; padding: 6px 0; color: #4338ca;">
+            <div style="font-size: 20px;">📝</div>
+            <div style="font-size: 11px;">计划</div>
+          </div>
+          <div style="flex: 1; text-align: center; padding: 6px 0; color: #9ca3af;">
+            <div style="font-size: 20px;">⚖️</div>
+            <div style="font-size: 11px;">健康</div>
+          </div>
+          <div style="flex: 1; text-align: center; padding: 6px 0; color: #9ca3af;">
+            <div style="font-size: 20px;">🤖</div>
+            <div style="font-size: 11px;">教练</div>
+          </div>
+          <div style="flex: 1; text-align: center; padding: 6px 0; color: #9ca3af;">
+            <div style="font-size: 20px;">⚙️</div>
+            <div style="font-size: 11px;">设置</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>组件树</h3>
+  <div style="background: #f9fafb; border-radius: 12px; padding: 16px; font-family: monospace; font-size: 14px; line-height: 1.8;">
+    App<br>
+    ├── Header ← 动态标题（根据当前 Tab）<br>
+    ├── &lt;main&gt;<br>
+    │   ├── PlanView<br>
+    │   ├── HealthView<br>
+    │   ├── CoachView<br>
+    │   └── SettingsView<br>
+    └── BottomNav ← 四个 Tab 切换
+  </div>
+</div>
+
+<div class="section">
+  <h3>关键约束</h3>
+  <ul>
+    <li><code>max-w-md</code> 水平居中</li>
+    <li>圆角 <code>rounded-3xl</code> 包裹整机感</li>
+    <li>底部导航固定，内容区可滚动</li>
+    <li>Tab 切换 <code>transition-opacity duration-200</code></li>
+  </ul>
+</div>

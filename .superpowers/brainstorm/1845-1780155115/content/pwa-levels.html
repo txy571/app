@@ -1,0 +1,70 @@
+<h2>PWA 架构：两个层次的区别</h2>
+<p class="subtitle">你需要的不仅仅是"长得像 App"</p>
+
+<div class="section">
+  <h3>🔹 层次一：App Shell 风格（基础层）</h3>
+  <div class="mockup">
+    <div class="mockup-body" style="padding: 16px;">
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="background: #eef2ff; border-radius: 12px; padding: 12px;">
+          <div style="font-weight: 600; color: #4338ca;">✅ 已有：</div>
+          <ul style="margin: 4px 0; padding-left: 20px;">
+            <li>max-w-md 模拟移动端卡片</li>
+            <li>Tab 切换 + 本地存储</li>
+            <li>纯前端架构</li>
+          </ul>
+        </div>
+        <div style="background: #fef2f2; border-radius: 12px; padding: 12px;">
+          <div style="font-weight: 600; color: #dc2626;">❌ 没有：</div>
+          <ul style="margin: 4px 0; padding-left: 20px;">
+            <li>不能从桌面图标启动</li>
+            <li>断网就是白屏</li>
+            <li>浏览器地址栏还在</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>🔸 层次二：完整 PWA（增强层）</h3>
+  <div class="mockup">
+    <div class="mockup-body" style="padding: 16px;">
+      <div style="display: flex; flex-direction: column; gap: 8px;">
+        <div style="display: flex; align-items: center; gap: 12px; background: #f0fdf4; border-radius: 12px; padding: 12px;">
+          <div style="font-size: 24px;">📱</div>
+          <div>
+            <div style="font-weight: 600;">安装到桌面</div>
+            <div style="font-size: 14px; color: #666;">像原生 App 一样有图标、独立窗口</div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; background: #f0fdf4; border-radius: 12px; padding: 12px;">
+          <div style="font-size: 24px;">📡</div>
+          <div>
+            <div style="font-weight: 600;">离线可用</div>
+            <div style="font-size: 14px; color: #666;">没网也能看昨天的复盘和任务</div>
+          </div>
+        </div>
+        <div style="display: flex; align-items: center; gap: 12px; background: #f0fdf4; border-radius: 12px; padding: 12px;">
+          <div style="font-size: 24px;">⚡</div>
+          <div>
+            <div style="font-weight: 600;">瞬间启动</div>
+            <div style="font-size: 14px; color: #666;">Service Worker 缓存壳资源</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>💡 我的建议</h3>
+  <p>对你这个场景，<strong>基础层已经够用</strong>，原因：</p>
+  <ul>
+    <li>数据存在 localStorage，关掉也在</li>
+    <li>AI 功能本身就需要联网</li>
+    <li>减少 Service Worker 调试成本</li>
+  </ul>
+  <p style="margin-top: 12px; color: #666;">我们可以加 manifest.json + 桌面图标支持（让它可以安装），但暂不写 Service Worker 离线逻辑。这样体验升级但代码量不大。</p>
+</div>

@@ -1,0 +1,131 @@
+<h2>🤖 AI 教练 — CoachView</h2>
+<p class="subtitle">核心联动区：读取 Plan + Health 数据，调用 AI</p>
+
+<div class="section">
+  <div class="mockup">
+    <div class="mockup-body" style="padding: 0;">
+      <div style="max-width: 360px; margin: 0 auto;">
+
+        <!-- 页面标题 -->
+        <div style="padding: 8px 20px 16px;">
+          <div style="font-size: 13px; color: #6b7280; font-weight: 500;">AI 每日复盘</div>
+        </div>
+
+        <!-- 呼吸动效按钮 -->
+        <div style="padding: 0 20px 24px; text-align: center;">
+          <div style="display: inline-block; animation: pulse 2s infinite; border-radius: 20px;">
+            <button style="background: linear-gradient(135deg, #4f46e5, #7c3aed); color: white; border: none; border-radius: 16px; padding: 16px 32px; font-size: 16px; font-weight: 600; cursor: pointer; box-shadow: 0 8px 24px rgba(79,70,229,0.3); white-space: nowrap;">
+              ⚡ 生成今日复盘
+            </button>
+          </div>
+          <div style="margin-top: 8px; font-size: 12px; color: #9ca3af;">点击后读取你的任务和体重数据</div>
+        </div>
+
+        <!-- 加载状态 -->
+        <div style="padding: 0 20px 16px; display: none;">
+          <div style="background: #f3f4f6; border-radius: 16px; padding: 24px; text-align: center;">
+            <div style="font-size: 14px; color: #6b7280;">🤔 正在分析你的今日数据...</div>
+          </div>
+        </div>
+
+        <!-- AI 回复卡片 -->
+        <div style="padding: 0 20px;">
+          <div style="background: linear-gradient(135deg, #eef2ff, #f5f3ff); border-radius: 16px; padding: 20px; border: 1px solid #e0e7ff;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 12px;">
+              <span style="font-size: 20px;">🤖</span>
+              <span style="font-weight: 600; font-size: 14px; color: #4338ca;">AI 教练 · 昕宇的每日复盘</span>
+            </div>
+            <div style="font-size: 14px; line-height: 1.7; color: #374151;">
+              <p><strong>🎯 执行力诊断：</strong><br>今日完成度 50%，二叉树实验耗时超预期，但坚持完成了核心任务，值得肯定。</p>
+              <p style="margin-top: 12px;"><strong>⚖️ 体重简评：</strong><br>当前 72.0kg，距目标 65.0kg 还差 7kg。本周趋势平稳，建议控制晚餐碳水摄入。</p>
+              <p style="margin-top: 12px;"><strong>💡 明日策略：</strong><br>未完成的"整理笔记"建议拆成 15 分钟小任务，安排在精力最好的上午时段优先处理。</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div style="height: 24px;"></div>
+
+<h2>⚙️ 设置 — SettingsView</h2>
+<p class="subtitle">API 配置 + 通用偏好</p>
+
+<div class="section">
+  <div class="mockup">
+    <div class="mockup-body" style="padding: 0;">
+      <div style="max-width: 360px; margin: 0 auto;">
+
+        <div style="padding: 8px 20px 16px;">
+          <div style="font-size: 13px; color: #6b7280; font-weight: 500;">应用设置</div>
+        </div>
+
+        <!-- API 配置区块 -->
+        <div style="margin: 0 20px; background: white; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); padding: 20px;">
+          <div style="font-weight: 600; font-size: 15px; margin-bottom: 16px;">🔌 API 配置</div>
+
+          <div style="display: flex; flex-direction: column; gap: 14px;">
+            <!-- 提供商选择 -->
+            <div>
+              <div style="font-size: 12px; color: #6b7280; font-weight: 500; margin-bottom: 4px;">API 提供商</div>
+              <select style="width: 100%; border: 1px solid #e5e7eb; border-radius: 10px; padding: 10px 12px; font-size: 14px; background: white;">
+                <option>DeepSeek（推荐）</option>
+                <option>OpenAI</option>
+                <option>Moonshot (Kimi)</option>
+                <option>通义千问 (DashScope)</option>
+                <option>SiliconFlow</option>
+                <option>✏️ 自定义</option>
+              </select>
+            </div>
+
+            <!-- Base URL（自动填充，可选编辑） -->
+            <div>
+              <div style="font-size: 12px; color: #6b7280; font-weight: 500; margin-bottom: 4px;">Base URL</div>
+              <input value="https://api.deepseek.com" style="width: 100%; border: 1px solid #e5e7eb; border-radius: 10px; padding: 10px 12px; font-size: 14px; background: #f9fafb; color: #374151;">
+            </div>
+
+            <!-- 模型名称 -->
+            <div>
+              <div style="font-size: 12px; color: #6b7280; font-weight: 500; margin-bottom: 4px;">模型名称</div>
+              <input value="deepseek-chat" style="width: 100%; border: 1px solid #e5e7eb; border-radius: 10px; padding: 10px 12px; font-size: 14px; background: #f9fafb; color: #374151;">
+            </div>
+
+            <!-- API Key -->
+            <div>
+              <div style="font-size: 12px; color: #6b7280; font-weight: 500; margin-bottom: 4px;">API Key</div>
+              <input type="password" value="sk-xxxxxxxxxxxxxxxx" style="width: 100%; border: 1px solid #e5e7eb; border-radius: 10px; padding: 10px 12px; font-size: 14px;">
+            </div>
+
+            <!-- 测试连接 & 保存 -->
+            <div style="display: flex; gap: 8px; margin-top: 4px;">
+              <button style="flex: 1; border: 1px solid #d1d5db; border-radius: 10px; padding: 10px; font-size: 13px; background: white; cursor: pointer;">测试连接</button>
+              <button style="flex: 1; background: #4f46e5; color: white; border: none; border-radius: 10px; padding: 10px; font-size: 13px; font-weight: 500; cursor: pointer;">保存配置</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 健康目标 -->
+        <div style="margin: 12px 20px 24px; background: white; border-radius: 16px; box-shadow: 0 1px 3px rgba(0,0,0,0.06); padding: 20px;">
+          <div style="font-weight: 600; font-size: 15px; margin-bottom: 12px;">🎯 健康目标</div>
+          <div style="display: flex; align-items: center; gap: 8px;">
+            <input type="number" step="0.1" value="65.0" style="width: 80px; border: 1px solid #e5e7eb; border-radius: 10px; padding: 10px 12px; font-size: 16px; font-weight: 600;">
+            <span style="font-size: 14px; color: #6b7280;">kg（目标体重）</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>技术细节</h3>
+  <ul>
+    <li><strong>呼吸动效</strong>：CSS <code>@keyframes pulse</code> + <code>box-shadow</code> 过渡</li>
+    <li><strong>请求组装</strong>：从 Plan 和 Health hooks 读数据 → 拼接 System Prompt + User Message → POST {BaseURL}/v1/chat/completions</li>
+    <li><strong>回复渲染</strong>：<code>react-markdown</code> 渲染 AI 的 Markdown 回复</li>
+    <li><strong>测试连接</strong>：发送简单请求验证 key 有效</li>
+  </ul>
+</div>
